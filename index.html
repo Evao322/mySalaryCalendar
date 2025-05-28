@@ -273,7 +273,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>我的行事曆</h1>
+        <h1>Calendar</h1>
         
         <div class="tab-container">
             <div class="tab-buttons">
@@ -347,23 +347,23 @@
     <div id="event-modal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeEventModal()">&times;</span>
-            <h2 id="modal-title">New</h2>
+            <h2 id="modal-title">新增</h2>
             <form id="event-form">
                 <input type="hidden" id="event-id">
                 <input type="hidden" id="event-date">
                 
                 <div>
-                    <label for="event-title">Title:</label>
+                    <label for="event-title">標題:</label>
                     <input type="text" id="event-title" required>
                     <div id="suggestions-container"></div>
                 </div>
                 
                 <div>
-                    <label for="event-type">Type:</label>
+                    <label for="event-type">類型:</label>
                     <select id="event-type" onchange="toggleHourlyRateField()">
-                        <option value="work">Work</option>
-                        <option value="personal">Personal</option>
-                        <option value="other">Other</option>
+                        <option value="work">工作</option>
+                        <option value="personal">個人</option>
+                        <option value="other">其他</option>
                     </select>
                 </div>
                 
@@ -383,18 +383,18 @@
                 </div>
                 
                 <div>
-                    <label for="event-description">Note:</label>
+                    <label for="event-description">備註:</label>
                     <textarea id="event-description" rows="3"></textarea>
                 </div>
                 
                 <div>
-                    <label for="event-salary">Salary</label>
+                    <label for="event-salary">薪資計算:</label>
                     <input type="checkbox" id="event-salary" checked>
-                    <span>Included in salary calculation</span>
+                    <span style="text-align: center;">包含在薪資計算中</span>
                 </div>
                 
-                <button type="button" onclick="saveEvent()">Svae</button>
-                <button type="button" onclick="deleteEvent()" id="delete-btn" style="display: none; background-color: #f44336;">Delete</button>
+                <button type="button" onclick="saveEvent()">儲存</button>
+                <button type="button" onclick="deleteEvent()" id="delete-btn" style="display: none; background-color: #f44336;">刪除</button>
             </form>
         </div>
     </div>
