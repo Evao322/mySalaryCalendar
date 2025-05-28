@@ -55,30 +55,37 @@
             font-size: 0.9rem;
         }
         .calendar-day {
-            min-height: 70px;
-            border: 1px solid #ddd;
-            padding: 3px;
-            border-radius: 5px;
-            background-color: white;
-            position: relative;
-            font-size: 0.8rem;
-        }
+        min-height: 70px;
+        height: 70px; /* 固定高度 */
+        border: 1px solid #ddd;
+        padding: 3px;
+        border-radius: 5px;
+        background-color: white;
+        position: relative;
+        font-size: 0.8rem;
+        overflow: hidden; /* 隱藏超出內容 */
+    }
         .date-number {
             font-weight: bold;
             margin-bottom: 3px;
             font-size: 0.9rem;
         }
         .event {
-            background-color: #e3f2fd;
-            padding: 2px 3px;
-            margin: 2px 0;
-            border-radius: 3px;
-            font-size: 0.7rem;
-            cursor: pointer;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
+        background-color: #e3f2fd;
+        padding: 1px 3px;
+        margin: 1px 0;
+        border-radius: 2px;
+        font-size: 0.7rem;
+        cursor: pointer;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* 限制顯示2行 */
+        -webkit-box-orient: vertical;
+        line-height: 1.2;
+        max-height: 2.4em; /* 2行文字高度 */
+        white-space: normal; /* 允許換行 */
+    }
         .event.work {
             background-color: #c8e6c9;
         }
@@ -232,19 +239,20 @@
             font-size: 0.8rem;
             margin-left: 8px;
         }
-        @media (max-width: 400px) {
-            .calendar-day {
-                min-height: 60px;
-                font-size: 0.7rem;
-            }
-            .date-number {
-                font-size: 0.8rem;
-            }
-            .event {
-                font-size: 0.6rem;
-                padding: 1px 2px;
-            }
+       @media (max-width: 400px) {
+        .calendar-day {
+            min-height: 60px;
+            height: 60px; /* 小屏幕固定高度 */
+            font-size: 0.7rem;
         }
+        
+        .event {
+            font-size: 0.6rem;
+            padding: 1px 2px;
+            -webkit-line-clamp: 2; /* 保持2行 */
+            max-height: 2.2em;
+        }
+    }
         /* 新增PWA樣式 */
         #installBtn {
             display: none;
